@@ -227,7 +227,6 @@ export default function Header() {
               { label: 'Программа', href: '/activities' },
               { label: 'Условия', href: '/facilities' },
               { label: 'Контакты', href: '/contacts' },
-              { label: 'Доступная среда', href: '/accessibility' },
             ].map((link) => (
               <Link
                 key={link.href}

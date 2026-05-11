@@ -300,7 +300,6 @@ export const FOOTER_LINKS = {
     { label: 'Документы', href: '/about/documents' },
     { label: 'Руководство', href: '/about/management' },
     { label: 'Педагогический состав', href: '/about/staff' },
-    { label: 'Доступная среда', href: '/accessibility' },
   ],
   camp: [
     { label: 'Смены и стоимость', href: '/services' },
