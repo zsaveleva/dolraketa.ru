@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import SectionHeader from '@/components/ui/SectionHeader'
 import VKIcon from '@/components/ui/VKIcon'
 import { CAMP } from '@/lib/data'
@@ -25,10 +26,13 @@ export default function Gallery() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
           {/* Hero photo */}
           <div className="col-span-2 row-span-2 relative rounded-3xl overflow-hidden min-h-[280px] md:min-h-[400px] group">
-            <img
+            <Image
               src={photos[0].file}
               alt={photos[0].label}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              fill
+              priority
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             <div className="absolute inset-0 flex items-end p-6">
@@ -44,10 +48,12 @@ export default function Gallery() {
               key={i}
               className="relative rounded-3xl overflow-hidden min-h-[130px] md:min-h-[195px] group"
             >
-              <img
+              <Image
                 src={photos[i].file}
                 alt={photos[i].label}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                fill
+                sizes="(min-width: 768px) 25vw, 50vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               <div className="absolute bottom-3 left-3 right-3">
@@ -62,10 +68,12 @@ export default function Gallery() {
               key={i}
               className="relative rounded-3xl overflow-hidden min-h-[130px] md:min-h-[195px] group"
             >
-              <img
+              <Image
                 src={photos[i].file}
                 alt={photos[i].label}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                fill
+                sizes="(min-width: 768px) 25vw, 50vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               <div className="absolute bottom-3 left-3 right-3">
@@ -80,10 +88,12 @@ export default function Gallery() {
               key={i}
               className="md:col-span-2 relative rounded-3xl overflow-hidden min-h-[200px] md:min-h-[320px] group"
             >
-              <img
+              <Image
                 src={photos[i].file}
                 alt={photos[i].label}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                fill
+                sizes="(min-width: 768px) 50vw, 50vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               <div className="absolute bottom-4 left-6 right-6">
