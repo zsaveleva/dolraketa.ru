@@ -11,7 +11,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/privacy/'],
       },
     ],
-    sitemap: 'https://zsaveleva.github.io/sitemap.xml',
-    host: 'https://zsaveleva.github.io',
+    sitemap: 'https://zsaveleva.github.io/dolraketa.ru/sitemap.xml',
+    host: 'https://zsaveleva.github.io/dolraketa.ru',
   }
 }

@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 
 export const dynamic = 'force-static'
 
-const BASE = 'https://zsaveleva.github.io'
+const BASE = 'https://zsaveleva.github.io/dolraketa.ru'
 
 const ROUTES: { path: string; changeFrequency: 'monthly' | 'weekly' | 'yearly'; priority: number }[] = [
   { path: '', changeFrequency: 'weekly', priority: 1.0 },

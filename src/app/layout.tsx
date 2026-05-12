@@ -30,7 +30,7 @@ const TITLE = 'Детский лагерь «Ракета» — путёвки 2
 const DESCRIPTION = 'Детский оздоровительный лагерь «Ракета» в Выборгском районе Ленинградской области. С 1956 года. 4 летние смены 2026 года по 21 дню — 67 000 ₽. 70 км от Санкт-Петербурга, в государственном заказнике «Гладышевский». Тел. ' + CAMP.phone
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://zsaveleva.github.io'),
+  metadataBase: new URL('https://zsaveleva.github.io/dolraketa.ru'),
   title: {
     default: TITLE,
     template: '%s | Детский лагерь «Ракета»',

@@ -275,13 +275,13 @@ export const FAQ = [
 ]
 
 export const DOCUMENTS = [
-  { title: 'Лицензия на медицинскую деятельность (лист 1)', file: '/docs/Медицинская_лицензия_1.pdf', format: 'PDF' },
-  { title: 'Лицензия на медицинскую деятельность (лист 2)', file: '/docs/Медицинская_лицензия_2.pdf', format: 'PDF' },
-  { title: 'Лицензия на медицинскую деятельность (лист 3)', file: '/docs/Медицинская_лицензия_3.pdf', format: 'PDF' },
-  { title: 'Санитарно-эпидемиологическое заключение', file: '/docs/Санитарно-эпидемиологическое заключение.pdf', format: 'PDF' },
-  { title: 'Долгосрочная развивающая программа', file: '/docs/Долгосрочная развивающая программа.docx', format: 'DOCX' },
-  { title: 'Рецензия на программу лагеря', file: '/docs/Рецензия на программу лагеря Содружество.pdf', format: 'PDF' },
-  { title: 'Устав организации', file: '/docs/Устав.rar', format: 'RAR' },
+  { title: 'Лицензия на медицинскую деятельность (лист 1)', file: '/dolraketa.ru/docs/Медицинская_лицензия_1.pdf', format: 'PDF' },
+  { title: 'Лицензия на медицинскую деятельность (лист 2)', file: '/dolraketa.ru/docs/Медицинская_лицензия_2.pdf', format: 'PDF' },
+  { title: 'Лицензия на медицинскую деятельность (лист 3)', file: '/dolraketa.ru/docs/Медицинская_лицензия_3.pdf', format: 'PDF' },
+  { title: 'Санитарно-эпидемиологическое заключение', file: '/dolraketa.ru/docs/Санитарно-эпидемиологическое заключение.pdf', format: 'PDF' },
+  { title: 'Долгосрочная развивающая программа', file: '/dolraketa.ru/docs/Долгосрочная развивающая программа.docx', format: 'DOCX' },
+  { title: 'Рецензия на программу лагеря', file: '/dolraketa.ru/docs/Рецензия на программу лагеря Содружество.pdf', format: 'PDF' },
+  { title: 'Устав организации', file: '/dolraketa.ru/docs/Устав.rar', format: 'RAR' },
 ]
 
 export const FOOTER_LINKS = {
