@@ -181,9 +181,9 @@ export const TEAM = [
     color: 'sky-camp',
   },
   {
-    name: 'Уточняется',
-    role: 'Главный врач',
-    initials: '—',
+    name: 'Соловьева Екатерина Александровна',
+    role: 'Врач',
+    initials: 'С',
     color: 'leaf',
   },
   {
@@ -193,22 +193,34 @@ export const TEAM = [
     color: 'gold',
   },
   {
-    name: 'Антон',
-    role: 'Диджей',
-    initials: 'А',
+    name: 'Марков Александр Николаевич',
+    role: 'Культ-организатор',
+    initials: 'М',
     color: 'forest',
+  },
+  {
+    name: 'Сергеев Антон Сергеевич',
+    role: 'Диджей',
+    initials: 'С',
+    color: 'sky-camp',
+  },
+  {
+    name: 'Гонина Александра Николаевна',
+    role: 'Фотограф',
+    initials: 'Г',
+    color: 'leaf',
   },
   {
     name: 'Капырина Ангелина Александровна',
     role: 'Воспитатель',
     initials: 'К',
-    color: 'leaf',
+    color: 'gold',
   },
   {
-    name: 'Инна Борисовна',
+    name: 'Чаплыгина Инна Борисовна',
     role: 'Педагог-психолог',
-    initials: 'И',
-    color: 'sky-camp',
+    initials: 'Ч',
+    color: 'forest',
   },
 ]
 
