@@ -11,6 +11,7 @@ const tabColors = {
   gold: { active: 'bg-gold text-ink', dot: 'bg-gold', border: 'border-gold/20 bg-gold-light' },
   leaf: { active: 'bg-leaf text-white', dot: 'bg-leaf', border: 'border-leaf/20 bg-leaf-light' },
   forest: { active: 'bg-forest text-white', dot: 'bg-forest', border: 'border-forest/20 bg-cream' },
+  green: { active: 'bg-emerald-600 text-white', dot: 'bg-emerald-600', border: 'border-emerald-200 bg-emerald-50' },
 }
 
 export default function Activities() {
@@ -24,7 +25,7 @@ export default function Activities() {
         <SectionHeader
           label="Программа"
           title="Каждый найдёт своё"
-          description="Более 30 кружков и секций, распределённых по 4 направлениям. Дети сами выбирают то, что им интересно."
+          description="Более 10 кружков и секций по 2 направлениям. Дети сами выбирают то, что им интересно."
         />
 
         {/* Tabs */}

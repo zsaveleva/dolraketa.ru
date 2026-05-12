@@ -4,7 +4,9 @@ import { CAMP } from '@/lib/data'
 
 export const metadata: Metadata = {
   title: 'Политика конфиденциальности',
-  description: 'Политика в отношении обработки персональных данных СОК «Ракета».',
+  description: 'Политика в отношении обработки персональных данных в ООО «СОК «Ракета». Согласно требованиям Федерального закона №152-ФЗ.',
+  alternates: { canonical: '/privacy' },
+  robots: { index: false, follow: true },
 }
 
 export default function PrivacyPage() {

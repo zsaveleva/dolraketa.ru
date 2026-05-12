@@ -3,34 +3,35 @@ import Link from 'next/link'
 import { ACTIVITIES } from '@/lib/data'
 
 export const metadata: Metadata = {
-  title: 'Программа и активности',
-  description: 'Спорт, творчество, наука и приключения в СОК «Ракета». Расписание дня, кружки и секции, выезды и мероприятия.',
+  title: 'Программа смены — спорт, творчество, экскурсии',
+  description: 'Что делают дети в лагере «Ракета»: спортивные секции, творческие мастерские, экскурсии в бассейн и на конную ферму. Распорядок дня и особые мероприятия каждой смены.',
+  keywords: ['программа детского лагеря', 'кружки и секции детский лагерь', 'распорядок дня лагерь', 'мероприятия в детском лагере', 'экскурсии в детском лагере'],
+  alternates: { canonical: '/activities' },
+  openGraph: { title: 'Программа смены — спорт, творчество, экскурсии', url: '/activities' },
 }
 
 const schedule = [
-  { time: '08:00', activity: 'Подъём, утренняя зарядка' },
-  { time: '08:30', activity: 'Водные процедуры' },
+  { time: '08:00', activity: 'Подъём' },
+  { time: '08:45', activity: 'Зарядка' },
   { time: '09:00', activity: 'Завтрак' },
-  { time: '10:00', activity: 'Занятия в кружках (блок 1)' },
-  { time: '11:30', activity: '2-й завтрак' },
-  { time: '12:00', activity: 'Спортивные игры и купание' },
-  { time: '13:30', activity: 'Обед' },
-  { time: '14:00', activity: 'Тихий час / свободное время' },
-  { time: '15:30', activity: 'Полдник' },
-  { time: '16:00', activity: 'Занятия в кружках (блок 2)' },
-  { time: '18:00', activity: 'Ужин' },
-  { time: '19:00', activity: 'Общелагерные мероприятия' },
-  { time: '21:00', activity: 'Вечерняя линейка' },
+  { time: '09:30–12:50', activity: 'Кружки и секции' },
+  { time: '13:00', activity: 'Обед' },
+  { time: '14:00–15:50', activity: 'Тихий час' },
+  { time: '16:00', activity: 'Полдник' },
+  { time: '16:30', activity: 'Общелагерное мероприятие' },
+  { time: '18:30', activity: 'Ужин' },
+  { time: '19:30', activity: 'Вечернее мероприятие / дискотека' },
+  { time: '20:30', activity: 'Второй ужин' },
+  { time: '21:00', activity: 'Подготовка ко сну' },
   { time: '22:00', activity: 'Отбой' },
 ]
 
 const special = [
   { title: 'День самоуправления', desc: 'Дети управляют лагерем сами — один день в смену', emoji: '🏛️' },
-  { title: 'Ночной квест', desc: 'Командная игра в тёмное время суток под звёздным небом', emoji: '🌙' },
+  { title: 'Ярмарка', desc: 'Ребята организуют тематические станции и получают за это лагерные деньги', emoji: '🎪' },
+  { title: 'НеИгры', desc: 'Интерактивная программа с нестандартными заданиями и играми для развития личности и командного взаимодействия', emoji: '🎲' },
   { title: 'Звёздный фестиваль', desc: 'Финальный гала-концерт с награждением лучших', emoji: '⭐' },
-  { title: 'Родительский день', desc: 'Открытый день в середине смены — приехать могут все', emoji: '👨‍👩‍👧' },
-  { title: 'Олимпиада Созвездия', desc: 'Спортивные состязания между всеми отрядами', emoji: '🏆' },
-  { title: 'Экспедиция в лес', desc: 'Двухдневный поход с ночёвкой у костра', emoji: '🏕️' },
+  { title: 'Олимпиада', desc: 'Спортивные состязания между всеми отрядами', emoji: '🏆' },
 ]
 
 export default function ActivitiesPage() {
@@ -76,7 +77,7 @@ export default function ActivitiesPage() {
                 key={item.time}
                 className={`flex items-center gap-5 px-7 py-4 ${i % 2 === 0 ? 'bg-white' : 'bg-cream'}`}
               >
-                <span className="font-heading font-bold text-forest text-sm w-14 flex-shrink-0">{item.time}</span>
+                <span className="font-heading font-bold text-forest text-sm w-28 flex-shrink-0">{item.time}</span>
                 <span className="w-px h-5 bg-gray-200 flex-shrink-0" />
                 <span className="text-gray-700 text-sm">{item.activity}</span>
               </div>

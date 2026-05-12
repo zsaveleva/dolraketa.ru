@@ -4,8 +4,11 @@ import { ArrowRight, Building2, FileText, Users, Phone, Award, MapPin } from 'lu
 import { CAMP } from '@/lib/data'
 
 export const metadata: Metadata = {
-  title: 'Об организации',
-  description: 'Основные сведения о СОК «Ракета»: юридическая информация, лицензии, контрольно-надзорная деятельность, описание деятельности.',
+  title: 'Об организации отдыха детей — реквизиты, лицензии',
+  description: 'Сведения об ООО «Спортивно-оздоровительный комплекс «Ракета»: ИНН, ОГРН, банковские реквизиты, лицензии, контрольно-надзорная деятельность. Соответствие Приказу Минпросвещения №201.',
+  keywords: ['СОК Ракета реквизиты', 'детский лагерь Ракета ИНН', 'детский лагерь лицензия', 'ООО СОК Ракета'],
+  alternates: { canonical: '/about' },
+  openGraph: { title: 'Об организации отдыха детей — реквизиты, лицензии', url: '/about' },
 }
 
 const sections = [
@@ -73,14 +76,19 @@ export default function AboutPage() {
                   { dt: 'Сокращённое наименование', dd: `ДОЛ «${CAMP.name}»` },
                   { dt: 'Юридическое лицо', dd: CAMP.legalName },
                   { dt: 'ИНН', dd: CAMP.inn },
+                  { dt: 'КПП', dd: CAMP.kpp },
                   { dt: 'ОГРН', dd: CAMP.ogrn },
+                  { dt: 'Расчётный счёт', dd: CAMP.bankAccount },
+                  { dt: 'Банк', dd: CAMP.bankName },
+                  { dt: 'Корр. счёт', dd: CAMP.corrAccount },
+                  { dt: 'БИК', dd: CAMP.bik },
                   { dt: 'Год основания', dd: CAMP.founded },
                   { dt: 'Возраст детей', dd: `${CAMP.ages}` },
                   { dt: 'Местонахождение', dd: CAMP.address },
                 ].map(({ dt, dd }) => (
                   <div key={dt} className="grid grid-cols-[auto_1fr] gap-4 pb-4 border-b border-gray-100 last:border-0 last:pb-0">
                     <dt className="text-gray-500 text-sm min-w-[160px]">{dt}</dt>
-                    <dd className="text-ink text-base font-medium">{dd}</dd>
+                    <dd className="text-ink text-base font-medium break-all">{dd}</dd>
                   </div>
                 ))}
               </dl>

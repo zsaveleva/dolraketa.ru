@@ -2,12 +2,14 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Check, Phone, Calendar, Clock, Users } from 'lucide-react'
 import { SESSIONS, CAMP } from '@/lib/data'
-import Badge from '@/components/ui/Badge'
 import MAXIcon from '@/components/ui/MAXIcon'
 
 export const metadata: Metadata = {
-  title: 'Смены и стоимость',
-  description: 'Путёвки в СОК «Ракета» 2025: весенние, летние и осенние смены для детей 6–17 лет. Стоимость от 28 000 ₽. Что включено, как оформить.',
+  title: 'Смены и цены 2026 — путёвки от 67 000 ₽',
+  description: 'Путёвки в детский лагерь «Ракета» на лето 2026: 4 смены по 21 дню для детей 6–17 лет. Единая цена — 67 000 ₽, всё включено. Оформление по телефону, без онлайн-форм.',
+  keywords: ['путёвки в детский лагерь 2026', 'цены детский лагерь Ленинградская область', 'летние смены 2026', 'стоимость детский лагерь СПб', 'путёвки лето 2026'],
+  alternates: { canonical: '/services' },
+  openGraph: { title: 'Смены и цены 2026 — путёвки от 67 000 ₽', url: '/services' },
 }
 
 const included = [
@@ -44,24 +46,18 @@ export default function ServicesPage() {
             <span className="text-white/80">Услуги и стоимость</span>
           </nav>
           <h1 className="font-heading font-black text-4xl md:text-5xl text-white mb-4">Услуги и стоимость</h1>
-          <p className="text-white/75 text-lg max-w-xl">Путёвки 2025. Цены прозрачные, без скрытых платежей.</p>
+          <p className="text-white/75 text-lg max-w-xl">Путёвки 2026. Цены прозрачные, без скрытых платежей.</p>
         </div>
       </div>
 
       <div className="section-py">
         <div className="container-camp">
           {/* Regular sessions */}
-          <div className="grid md:grid-cols-3 gap-6 mb-6">
-            {SESSIONS.filter(s => !s.featured).map((s) => (
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            {SESSIONS.map((s) => (
               <div key={s.id} className="bg-white rounded-3xl border-2 border-gray-100 hover:border-forest/20 p-7 hover:shadow-lg transition-all duration-300">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="text-xs font-bold uppercase tracking-wider text-leaf">{s.title}</div>
-                  {s.badge && (
-                    <Badge variant={s.badgeColor as 'red' | 'green' | 'gold'} size="sm">{s.badge}</Badge>
-                  )}
-                </div>
-                <h3 className="font-heading font-black text-2xl text-ink mb-1">{s.theme}</h3>
-                <p className="text-gray-400 text-sm mb-6">{s.themeDesc}</p>
+                <div className="text-xs font-bold uppercase tracking-wider text-leaf mb-4">{s.title}</div>
+                <h3 className="font-heading font-black text-2xl text-ink mb-6">{s.theme}</h3>
                 <div className="space-y-2.5 mb-6">
                   <div className="flex items-center gap-2 text-sm text-gray-500">
                     <Calendar className="w-4 h-4 text-forest flex-shrink-0" />
@@ -69,7 +65,7 @@ export default function ServicesPage() {
                   </div>
                   <div className="flex items-center gap-2 text-sm text-gray-500">
                     <Clock className="w-4 h-4 text-forest flex-shrink-0" />
-                    {s.duration} дней
+                    {s.duration} день
                   </div>
                   <div className="flex items-center gap-2 text-sm text-gray-500">
                     <Users className="w-4 h-4 text-forest flex-shrink-0" />

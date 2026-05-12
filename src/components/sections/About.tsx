@@ -5,8 +5,8 @@ import { CAMP } from '@/lib/data'
 
 const stats = [
   { icon: Calendar, value: '1956', label: 'Год основания', color: 'text-forest' },
-  { icon: Users, value: '50 000+', label: 'Детей побывало', color: 'text-leaf' },
-  { icon: MapPin, value: '8 га', label: 'Территория', color: 'text-gold' },
+  { icon: Users, value: '50 000+', label: 'Детей побывало', color: 'text-leaf' },
+  { icon: MapPin, value: '8 га', label: 'Территория', color: 'text-gold' },
   { icon: Award, value: '100%', label: 'Рейтинг безопасности', color: 'text-gold' },
 ]
 
@@ -53,15 +53,15 @@ export default function About() {
             {stats.map((s) => (
               <div
                 key={s.value}
-                className="card p-7 text-center"
+                className="card p-5 sm:p-7 text-center"
               >
                 <div className={`inline-flex p-3 rounded-2xl bg-gray-50 mb-4 ${s.color}`}>
                   <s.icon className="w-6 h-6" />
                 </div>
-                <div className={`font-heading font-black text-3xl sm:text-4xl mb-2 ${s.color}`}>
+                <div className={`font-heading font-black text-2xl sm:text-3xl md:text-4xl mb-2 ${s.color}`}>
                   {s.value}
                 </div>
-                <div className="text-gray-500 text-sm font-medium">{s.label}</div>
+                <div className="text-gray-500 text-xs sm:text-sm font-medium">{s.label}</div>
               </div>
             ))}
 

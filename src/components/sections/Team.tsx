@@ -17,7 +17,7 @@ export default function Team() {
         <SectionHeader
           label="Команда"
           title="Люди, которым вы доверяете детей"
-          description="Не наёмный персонал — настоящие энтузиасты своего дела. У каждого — профильное образование и годы опыта именно в детском отдыхе."
+          description="Профильное образование и проверка по реестру МВД у каждого сотрудника. Настоящие энтузиасты детского отдыха."
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
@@ -25,19 +25,13 @@ export default function Team() {
             const colorClass = avatarColors[member.color as keyof typeof avatarColors]
             return (
               <div key={member.name} className="card-hover text-center group">
-                {/* Avatar */}
                 <div className={`w-20 h-20 rounded-2xl ${colorClass} flex items-center justify-center font-heading font-black text-2xl mx-auto mb-5 transition-transform duration-300 group-hover:scale-105`}>
                   {member.initials}
                 </div>
                 <h3 className="font-heading font-bold text-base text-ink leading-tight mb-1">
                   {member.name}
                 </h3>
-                <div className="text-leaf text-sm font-semibold mb-3">{member.role}</div>
-                <div className="text-gray-500 text-sm leading-relaxed mb-3">{member.experience}</div>
-                <div className="w-full h-px bg-gray-100 mb-3" />
-                <div className="bg-cream rounded-xl px-3 py-2.5">
-                  <p className="text-gray-500 text-sm italic leading-relaxed">«{member.fun}»</p>
-                </div>
+                <div className="text-leaf text-sm font-semibold">{member.role}</div>
               </div>
             )
           })}

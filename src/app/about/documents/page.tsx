@@ -4,8 +4,11 @@ import { FileText, Download } from 'lucide-react'
 import { DOCUMENTS, CAMP } from '@/lib/data'
 
 export const metadata: Metadata = {
-  title: 'Документы',
-  description: 'Лицензии, санитарно-эпидемиологические заключения, программа воспитания и оздоровления, договор и другие документы СОК «Ракета».',
+  title: 'Документы — лицензии и заключения',
+  description: 'Лицензия на медицинскую деятельность, санитарно-эпидемиологическое заключение, развивающая программа, рецензия и устав детского лагеря «Ракета». Всё в открытом доступе.',
+  keywords: ['лицензия детский лагерь', 'санитарно-эпидемиологическое заключение лагерь', 'программа детского лагеря', 'устав детский лагерь Ракета'],
+  alternates: { canonical: '/about/documents' },
+  openGraph: { title: 'Документы — лицензии и заключения', url: '/about/documents' },
 }
 
 export default function DocumentsPage() {

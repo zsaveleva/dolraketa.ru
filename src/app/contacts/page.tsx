@@ -5,8 +5,11 @@ import { CAMP } from '@/lib/data'
 import MAXIcon from '@/components/ui/MAXIcon'
 
 export const metadata: Metadata = {
-  title: 'Контакты',
-  description: `Телефон, email, адрес и схема проезда до СОК «Ракета». Звоните: ${'+7 (921) 922-07-31'}.`,
+  title: 'Контакты — телефон, адрес, как добраться',
+  description: 'Контакты детского лагеря «Ракета»: телефон ' + CAMP.phone + ', email, адрес в пос. Горьковское Выборгского района Ленинградской области. Схема проезда из Санкт-Петербурга.',
+  keywords: ['контакты детский лагерь', 'как добраться до лагеря Ракета', 'детский лагерь Горьковское адрес', 'телефон детский лагерь СПб'],
+  alternates: { canonical: '/contacts' },
+  openGraph: { title: 'Контакты — телефон, адрес, как добраться', url: '/contacts' },
 }
 
 export default function ContactsPage() {

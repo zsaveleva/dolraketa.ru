@@ -3,33 +3,33 @@ import Link from 'next/link'
 import { CAMP } from '@/lib/data'
 
 export const metadata: Metadata = {
-  title: 'Руководство',
-  description: 'Директор и административный состав СОК «Ракета» — детского лагеря в Ленинградской области.',
+  title: 'Руководство — директор и заместители',
+  description: 'Руководство детского лагеря «Ракета»: генеральный директор Сердаров Ю.К., директор лагеря Цапин П.А., заместитель директора Храмова А.Е. Контакты приёмной.',
+  keywords: ['директор детский лагерь Ракета', 'руководство лагеря', 'Цапин Павел Анатольевич', 'Сердаров Юрий Кузьмич'],
+  alternates: { canonical: '/about/management' },
+  openGraph: { title: 'Руководство — директор и заместители', url: '/about/management' },
 }
 
 const management = [
   {
-    name: 'Белова Наталья Сергеевна',
-    role: 'Директор',
-    fullRole: 'Директор спортивно-оздоровительного комплекса «Ракета»',
-    education: 'Высшее педагогическое образование. РГПУ им. А.И. Герцена, специальность «Педагогика и психология», 2007 г.',
-    experience: '17 лет в сфере детского отдыха и оздоровления',
-    phone: CAMP.phone,
-    email: CAMP.email,
-    hours: CAMP.workingHours,
-    initials: 'НБ',
+    name: 'Сердаров Юрий Кузьмич',
+    role: 'Генеральный директор',
+    fullRole: 'Генеральный директор ООО «СОК «Ракета»',
+    initials: 'С',
     color: 'bg-forest',
   },
   {
-    name: 'Морозов Александр Петрович',
+    name: 'Цапин Павел Анатольевич',
+    role: 'Директор лагеря',
+    fullRole: 'Директор «ДОЛ «Ракета»',
+    initials: 'Ц',
+    color: 'bg-leaf',
+  },
+  {
+    name: 'Храмова Анастасия Евгеньевна',
     role: 'Заместитель директора',
-    fullRole: 'Заместитель директора по воспитательной и спортивной работе',
-    education: 'Высшее образование. НГУ им. П.Ф. Лесгафта, специальность «Физическая культура и спорт», 2009 г.',
-    experience: '12 лет, мастер спорта по лёгкой атлетике',
-    phone: CAMP.phone,
-    email: CAMP.email,
-    hours: CAMP.workingHours,
-    initials: 'АМ',
+    fullRole: 'Заместитель директора',
+    initials: 'Х',
     color: 'bg-sky-camp',
   },
 ]
@@ -57,11 +57,11 @@ export default function ManagementPage() {
             {management.map((person) => (
               <div key={person.name} className="bg-white rounded-3xl border border-gray-200 overflow-hidden">
                 <div className="flex flex-col md:flex-row">
-                  <div className={`${person.color} p-8 flex flex-col items-center justify-center min-w-[180px]`}>
-                    <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center font-heading font-black text-3xl text-white mb-3">
+                  <div className={`${person.color} px-8 py-10 flex flex-col items-center justify-center gap-4 md:w-[200px] md:flex-shrink-0`}>
+                    <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center font-heading font-black text-3xl text-white">
                       {person.initials}
                     </div>
-                    <div className="text-white/80 text-sm text-center font-medium">
+                    <div className="text-white/85 text-sm text-center font-medium leading-snug min-h-[2.5rem] flex items-center">
                       {person.role}
                     </div>
                   </div>
@@ -70,24 +70,16 @@ export default function ManagementPage() {
                     <div className="text-leaf font-semibold text-base mb-5">{person.fullRole}</div>
                     <dl className="grid sm:grid-cols-2 gap-4">
                       <div>
-                        <dt className="text-gray-400 text-sm font-medium mb-1">Образование</dt>
-                        <dd className="text-gray-700 text-base leading-relaxed">{person.education}</dd>
-                      </div>
-                      <div>
-                        <dt className="text-gray-400 text-sm font-medium mb-1">Опыт</dt>
-                        <dd className="text-gray-700 text-base">{person.experience}</dd>
-                      </div>
-                      <div>
                         <dt className="text-gray-400 text-sm font-medium mb-1">Телефон (приёмная)</dt>
-                        <dd><a href={`tel:${CAMP.phoneRaw}`} className="text-forest text-base font-medium hover:underline">{person.phone}</a></dd>
+                        <dd><a href={`tel:${CAMP.phoneRaw}`} className="text-forest text-base font-medium hover:underline">{CAMP.phone}</a></dd>
                       </div>
                       <div>
                         <dt className="text-gray-400 text-sm font-medium mb-1">Email</dt>
-                        <dd><a href={`mailto:${person.email}`} className="text-forest text-base font-medium hover:underline">{person.email}</a></dd>
+                        <dd><a href={`mailto:${CAMP.email}`} className="text-forest text-base font-medium hover:underline">{CAMP.email}</a></dd>
                       </div>
                       <div className="sm:col-span-2">
                         <dt className="text-gray-400 text-sm font-medium mb-1">Часы приёма</dt>
-                        <dd className="text-gray-700 text-base">{person.hours}</dd>
+                        <dd className="text-gray-700 text-base">{CAMP.workingHours}</dd>
                       </div>
                     </dl>
                   </div>

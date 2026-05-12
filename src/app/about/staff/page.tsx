@@ -1,19 +1,14 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { TEAM } from '@/lib/data'
+import { TEAM, CAMP } from '@/lib/data'
 
 export const metadata: Metadata = {
-  title: 'Педагогический состав',
-  description: 'Вожатые, педагоги и воспитатели СОК «Ракета». Все сотрудники с педагогическим образованием, прошли проверку МВД.',
+  title: 'Педагогический состав — педагоги и воспитатели',
+  description: 'Педагогический состав детского лагеря «Ракета»: педагог-организатор, воспитатели, педагог-психолог, главный врач. У всех педагогическое образование и проверка по реестру МВД.',
+  keywords: ['педагогический состав детский лагерь', 'воспитатели детский лагерь', 'педагог-психолог лагерь', 'врач в детском лагере'],
+  alternates: { canonical: '/about/staff' },
+  openGraph: { title: 'Педагогический состав — педагоги и воспитатели', url: '/about/staff' },
 }
-
-const extendedStaff = [
-  ...TEAM,
-  { name: 'Смирнова Ольга Дмитриевна', role: 'Педагог-психолог', experience: '7 лет', education: 'СПбГУ, психология', fun: 'Проводит тренинги по уверенности в себе', initials: 'ОС', color: 'leaf' },
-  { name: 'Козлов Игорь Владимирович', role: 'Инструктор по спорту', experience: '5 лет, КМС по плаванию', education: 'НГУ им. Лесгафта', fun: 'Научил плавать более 200 детей', initials: 'ИК', color: 'sky-camp' },
-  { name: 'Васильева Мария Николаевна', role: 'Педагог дополнительного образования', experience: '6 лет (робототехника, IT)', education: 'СПбПУ Петра Великого', fun: 'Выпускники её кружка уже в IT-компаниях', initials: 'МВ', color: 'forest' },
-  { name: 'Петров Денис Андреевич', role: 'Вожатый, старший отряд', experience: '4 года', education: 'РГПУ им. Герцена', fun: 'Придумал ночной квест «Операция Ракета»', initials: 'ДП', color: 'gold' },
-]
 
 const avatarColors: Record<string, string> = {
   forest: 'bg-forest text-white',
@@ -59,25 +54,21 @@ export default function StaffPage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {extendedStaff.map((person) => (
+            {TEAM.map((person) => (
               <div key={person.name} className="card">
                 <div className={`w-12 h-12 ${avatarColors[person.color]} rounded-xl flex items-center justify-center font-heading font-black text-lg mb-4`}>
                   {person.initials}
                 </div>
                 <h3 className="font-heading font-bold text-base text-ink leading-tight mb-1">{person.name}</h3>
-                <div className="text-leaf text-sm font-semibold mb-2">{person.role}</div>
-                <div className="text-gray-500 text-sm mb-1">{person.experience}</div>
-                <div className="text-gray-500 text-sm mb-4">{person.education}</div>
-                <div className="w-full h-px bg-gray-100 mb-3" />
-                <p className="text-gray-500 text-sm italic">«{person.fun}»</p>
+                <div className="text-leaf text-sm font-semibold">{person.role}</div>
               </div>
             ))}
           </div>
 
           <div className="mt-10 bg-cream rounded-2xl p-6 text-center">
             <p className="text-gray-500 text-base">
-              Полный список сотрудников, копии дипломов и справок об отсутствии судимости доступны по запросу.{' '}
-              <a href="mailto:raketa-lenobl@mail.ru" className="text-leaf hover:text-forest font-medium transition-colors">
+              Копии дипломов и справок об отсутствии судимости доступны по запросу.{' '}
+              <a href={`mailto:${CAMP.email}`} className="text-leaf hover:text-forest font-medium transition-colors">
                 Написать запрос
               </a>
             </p>

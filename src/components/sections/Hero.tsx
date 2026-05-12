@@ -66,11 +66,11 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="font-heading font-black text-[clamp(2.5rem,8vw,6rem)] text-white leading-[1.05] mb-6 tracking-tight">
+        <h1 className="font-heading font-black text-[clamp(2.5rem,8vw,6rem)] text-white leading-[1.2] md:leading-[1.05] mb-6 tracking-tight">
           Каникулы, которые{' '}
           <span className="text-gold relative">
             запомнят
-            <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 400 12" fill="none" preserveAspectRatio="none">
+            <svg className="absolute -bottom-0.5 md:-bottom-2 left-0 w-full" viewBox="0 0 400 12" fill="none" preserveAspectRatio="none">
               <path d="M2 8c60-6 120-6 200-4s138 4 198 2" stroke="#f0a30e" strokeWidth="3" strokeLinecap="round" opacity="0.6"/>
             </svg>
           </span>
@@ -127,7 +127,7 @@ export default function Hero() {
       {/* Scroll indicator */}
       <a
         href="#about"
-        className="absolute bottom-24 lg:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/35 hover:text-white/60 transition-colors"
+        className="absolute bottom-32 lg:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/70 hover:text-white transition-colors"
       >
         <span className="text-xs uppercase tracking-[0.2em]">Подробнее</span>
         <ChevronDown className="w-5 h-5 animate-bounce" />

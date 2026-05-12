@@ -25,10 +25,10 @@ export default function Footer() {
             <p className="text-sm text-white/65 leading-relaxed mb-6">
               {CAMP.shortDesc}. Ленинградская область.
             </p>
-            <div className="flex gap-3">
+            <div className="flex flex-col gap-3 items-start">
               <a
                 href={`tel:${CAMP.phoneRaw}`}
-                className="flex items-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold rounded-xl transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold rounded-xl transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 {CAMP.phone}
@@ -37,7 +37,7 @@ export default function Footer() {
                 href={CAMP.vkGroup}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold rounded-xl transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold rounded-xl transition-colors"
               >
                 <VKIcon className="w-4 h-4" />
                 ВКонтакте
