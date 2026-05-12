@@ -3,13 +3,14 @@ import VKIcon from '@/components/ui/VKIcon'
 import { CAMP } from '@/lib/data'
 
 const photos = [
-  { label: 'Открытие смены', file: '/dolraketa.ru/images/opening.jpg' },
-  { label: 'Спортивные игры', file: '/dolraketa.ru/images/sport.jpg' },
-  { label: 'Творческая мастерская', file: '/dolraketa.ru/images/creative.jpg' },
-  { label: 'Лагерные мероприятия', file: '/dolraketa.ru/images/camp-events.jpg' },
-  { label: 'Отрядные мероприятия', file: '/dolraketa.ru/images/team-events.jpg' },
-  { label: 'Экскурсия в бассейн', file: '/dolraketa.ru/images/pool.jpg' },
-  { label: 'Экскурсия на конную ферму', file: '/dolraketa.ru/images/horse-farm.jpg' },
+  { label: 'Открытие смены', file: '/images/opening.jpg' },
+  { label: 'Спортивные игры', file: '/images/sport.jpg' },
+  { label: 'Творческая мастерская', file: '/images/creative.jpg' },
+  { label: 'Лагерные мероприятия', file: '/images/camp-events.jpg' },
+  { label: 'Отрядные мероприятия', file: '/images/team-events.jpg' },
+  { label: 'Экскурсия в бассейн', file: '/images/pool.jpg' },
+  { label: 'Экскурсия на конную ферму', file: '/images/horse-farm.jpg' },
+  { label: 'Краски Холи', file: '/images/holy.jpg' },
 ]
 
 export default function Gallery() {
@@ -91,6 +92,19 @@ export default function Gallery() {
               </div>
             </div>
           ))}
+
+          {/* Full-width finale */}
+          <div className="col-span-2 md:col-span-4 relative rounded-3xl overflow-hidden min-h-[280px] md:min-h-[520px] group">
+            <img
+              src={photos[7].file}
+              alt={photos[7].label}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+            <div className="absolute bottom-5 left-6 right-6">
+              <div className="font-heading font-bold text-white text-xl md:text-2xl">{photos[7].label}</div>
+            </div>
+          </div>
         </div>
 
         <div className="text-center">
@@ -103,7 +117,7 @@ export default function Gallery() {
             <VKIcon className="w-5 h-5" />
             Все фото в группе ВКонтакте
           </a>
-          <p className="text-gray-400 text-sm mt-3">Публикуем фото каждый день во время смены</p>
+          {/* <p className="text-gray-400 text-sm mt-3">Публикуем фото каждый день во время смены</p> */}
         </div>
       </div>
     </section>

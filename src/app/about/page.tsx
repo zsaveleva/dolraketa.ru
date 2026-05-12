@@ -63,32 +63,32 @@ export default function AboutPage() {
           {/* Main info grid */}
           <div className="grid lg:grid-cols-2 gap-8 mb-12">
             {/* Organization info */}
-            <div className="bg-cream rounded-3xl p-8">
-              <h2 className="font-heading font-bold text-2xl text-ink mb-6 flex items-center gap-3">
-                <div className="w-8 h-8 bg-forest rounded-lg flex items-center justify-center">
+            <div className="bg-cream rounded-3xl p-6 sm:p-8">
+              <h2 className="font-heading font-bold text-xl sm:text-2xl text-ink mb-6 flex items-center gap-3">
+                <div className="w-8 h-8 bg-forest rounded-lg flex items-center justify-center flex-shrink-0">
                   <Building2 className="w-4 h-4 text-white" />
                 </div>
                 Основные сведения
               </h2>
-              <dl className="space-y-4">
+              <dl className="divide-y divide-gray-200">
                 {[
                   { dt: 'Полное наименование', dd: CAMP.fullName },
                   { dt: 'Сокращённое наименование', dd: `ДОЛ «${CAMP.name}»` },
                   { dt: 'Юридическое лицо', dd: CAMP.legalName },
-                  { dt: 'ИНН', dd: CAMP.inn },
-                  { dt: 'КПП', dd: CAMP.kpp },
-                  { dt: 'ОГРН', dd: CAMP.ogrn },
-                  { dt: 'Расчётный счёт', dd: CAMP.bankAccount },
+                  { dt: 'ИНН', dd: CAMP.inn, mono: true },
+                  { dt: 'КПП', dd: CAMP.kpp, mono: true },
+                  { dt: 'ОГРН', dd: CAMP.ogrn, mono: true },
+                  { dt: 'Расчётный счёт', dd: CAMP.bankAccount, mono: true },
                   { dt: 'Банк', dd: CAMP.bankName },
-                  { dt: 'Корр. счёт', dd: CAMP.corrAccount },
-                  { dt: 'БИК', dd: CAMP.bik },
+                  { dt: 'Корр. счёт', dd: CAMP.corrAccount, mono: true },
+                  { dt: 'БИК', dd: CAMP.bik, mono: true },
                   { dt: 'Год основания', dd: CAMP.founded },
                   { dt: 'Возраст детей', dd: `${CAMP.ages}` },
                   { dt: 'Местонахождение', dd: CAMP.address },
-                ].map(({ dt, dd }) => (
-                  <div key={dt} className="grid grid-cols-[auto_1fr] gap-4 pb-4 border-b border-gray-100 last:border-0 last:pb-0">
-                    <dt className="text-gray-500 text-sm min-w-[160px]">{dt}</dt>
-                    <dd className="text-ink text-base font-medium break-all">{dd}</dd>
+                ].map(({ dt, dd, mono }) => (
+                  <div key={dt} className="py-3 first:pt-0 last:pb-0 flex flex-col sm:flex-row sm:gap-4">
+                    <dt className="text-gray-500 text-xs sm:text-sm sm:min-w-[180px] sm:flex-shrink-0 mb-1 sm:mb-0">{dt}</dt>
+                    <dd className={`text-ink text-sm sm:text-base font-medium break-words ${mono ? 'font-mono tabular-nums' : ''}`}>{dd}</dd>
                   </div>
                 ))}
               </dl>

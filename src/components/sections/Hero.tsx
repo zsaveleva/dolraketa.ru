@@ -61,9 +61,9 @@ export default function Hero() {
       {/* Main content */}
       <div className="relative z-10 container-camp w-full text-center py-32 lg:py-40">
         {/* Live badge */}
-        <div className="inline-flex items-center gap-2.5 px-5 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm font-medium text-white/90 mb-10">
+        {/* <div className="inline-flex items-center gap-2.5 px-5 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm font-medium text-white/90 mb-10">
           Набор на сезон 2026 открыт
-        </div>
+        </div> */}
 
         {/* Headline */}
         <h1 className="font-heading font-black text-[clamp(2.5rem,8vw,6rem)] text-white leading-[1.2] md:leading-[1.05] mb-6 tracking-tight">
