@@ -1,41 +1,80 @@
-name: Deploy to GitHub Pages
+name: Deploy application
 
 on:
   push:
-    branches: [main]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      release:
+        description: 'Имя директории релиза для отката (например release-20260512200000)'
+        required: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build_and_deploy:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout source code
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
+          node-version: '22'
 
-      - run: npm ci
+      - name: Install dependencies
+        run: npm install
 
-      - run: npm run build
+      - name: Build application
+        run: npm run build
 
-      - uses: actions/configure-pages@v4
+      - name: Define release directory name
+        id: set_release
+        run: |
+          echo "release_dir=release-$(date +'%Y%m%d%H%M%S')" >> $GITHUB_OUTPUT
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Copy build to remote release dir
+        uses: appleboy/scp-action@master
         with:
-          path: ./out
+          host: ${{ vars.PROD_HOST }}
+          username: ${{ vars.PROD_USER }}
+          key: ${{ vars.PROD_KEY }}
+          source: "out/"
+          target: "/opt/dolraketa/releases/${{ steps.set_release.outputs.release_dir }}/"
+          strip_components: 1
+          timeout: 120s
 
-      - uses: actions/deploy-pages@v4
-        id: deployment
+      - name: Switch symlink to new release and reload nginx
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ vars.PROD_HOST }}
+          username: ${{ vars.PROD_USER }}
+          key: ${{ vars.PROD_KEY }}
+          script: |
+            BASE=/opt/dolraketa
+            NEW_RELEASE=${{ steps.set_release.outputs.release_dir }}
+            ln -sfn "releases/$NEW_RELEASE" "$BASE/current"
+            docker exec dolraketa-nginx nginx -s reload
+            ls -1t "$BASE/releases" | tail -n +6 | xargs -I{} rm -rf "$BASE/releases/{}"
+            echo "Deployed and switched to $NEW_RELEASE"
+
+  rollback:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Rollback to specified release
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ vars.PROD_HOST }}
+          username: ${{ vars.PROD_USER }}
+          key: ${{ vars.PROD_KEY }}
+          script: |
+            BASE=/opt/dolraketa
+            TARGET=${{ github.event.inputs.release }}
+            if [ ! -d "$BASE/releases/$TARGET" ]; then
+              echo "Error: Release '$TARGET' not found" >&2
+              exit 1
+            fi
+            ln -sfn "releases/$TARGET" "$BASE/current"
+            docker exec dolraketa-nginx nginx -s reload
+            echo "Rolled back to $TARGET"
