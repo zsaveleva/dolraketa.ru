@@ -5,6 +5,7 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import MobileBar from '@/components/layout/MobileBar'
 import JsonLd from '@/components/seo/JsonLd'
+import YandexMetrika from '@/components/seo/YandexMetrika'
 import { CAMP } from '@/lib/data'
 
 const inter = Inter({
@@ -107,6 +108,7 @@ export default function RootLayout({
     <html lang="ru" className={`${inter.variable} ${montserrat.variable}`}>
       <body className="font-body antialiased">
         <JsonLd />
+        <YandexMetrika />
         <Header />
         {children}
         <Footer />
