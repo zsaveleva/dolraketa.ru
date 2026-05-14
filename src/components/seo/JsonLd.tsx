@@ -1,7 +1,7 @@
 import { CAMP, SESSIONS } from '@/lib/data'
 
 export default function JsonLd() {
-  const baseUrl = 'https://zsaveleva.github.io/dolraketa.ru'
+  const baseUrl = 'https://dolraketa.ru'
 
   const organization = {
     '@context': 'https://schema.org',
